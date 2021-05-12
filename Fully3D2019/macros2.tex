@@ -1,0 +1,543 @@
+\def\sumk{\sum_{k=1}^K}
+\def\suml{\sum_{l=1}^L}
+\def\sumn{\sum_{n=1}^N}
+\def\sumj{\sum_{j=1}^J}
+\def\sumi{\sum_{i=1}^I}
+
+\def\nub{\bm{\nu}}
+\def\rak{\red{a_k}}
+\def\rbk{\red{b_k}}
+\def\rck{\red{c_k}}
+\def\rtk{\red{t_k}}
+\def\rvk{\red{v_k}}
+\def\rnuk{\red{\nu_k}}
+\def\rnuz{\red{\nu_0}}
+\def\rphik{\red{\phi_k}}
+\def\rnub{\red{\nub}}
+\def\rtb{\red{\tb}}
+\def\rphib{\red{\phib}}
+\def\rfn{\red{f_n}}
+\def\rtn{\red{t_n}}
+\def\rvn{\red{v_n}}
+
+\def\rve{\red{v_\epsilon}}
+\def\rvf{\red{v_f}}
+\def\rveh{\red{\widehat{v}_\epsilon}}
+\def\rvfh{\red{\widehat{v}_f}}
+
+\def\rnu{\red{\nu}}
+\def\rphi{\red{\phi}}
+\def\rbl{\red{b_l}}
+\def\rbb{\red{\bb}}
+
+\def\modela{\tt\setlength{\unitlength}{0.92pt}
+\begin{picture}(250,106)
+\thinlines    \put(-5,105){$\Nc(t|\red{t_1,v_1})$}
+              \put(35,100){\vector(1,0){25}}
+              \put(60,95){\framebox(37,16){\red{$a_1$}}}
+			  \multiput(77,72)(0,7){3}{\circle*{4}}
+              \put(-5,65){$\Nc(t|\red{t_k,v_k})$}
+              \put(35,59){\vector(1,0){25}}
+              \put(60,51){\framebox(37,16){\red{$a_k$}}}
+              \multiput(77,32)(0,7){3}{\circle*{4}}              
+              \put(-5,23){$\Nc(t|\red{t_K,v_K})$}
+              \put(60,10){\framebox(37,16){\red{$a_K$}}}
+              \put(35,18){\vector(1,0){25}}
+
+              \put(98,103){\vector(1,-1){38}}
+              \put(98,59){\vector(1,0){39}}
+              \put(98,17){\vector(1,1){38}}
+
+              \put(150,60){\circle{24}}
+              \put(146,57){$\Large+$}
+              \put(165,75){$g_{\rthetab}(t)$}
+              \put(164,60){\vector(1,0){33}}
+              
+              \put(212,85){$\epsilon(t)$}
+              \put(210,95){\vector(0,-1){20}}
+              \put(211,60){\circle{24}}
+              \put(207,58){$\Large+$}
+              
+              \put(225,66){$g(t)$}
+              \put(225,60){\vector(1,0){20}}
+\end{picture}
+}
+
+\def\modelb{\tt\setlength{\unitlength}{0.92pt}
+\begin{picture}(250,106)
+\thinlines    \put(-5,105){$\delta(t-\red{t_1})$}
+              \put(0,100){\vector(1,0){37}}
+              \put(38,95){\framebox(60,16){$\red{a_1} \Nc(t|0,\red{v_1})$}}
+			  \multiput(77,72)(0,7){3}{\circle*{4}}
+              \put(-5,65){$\delta(t-\red{t_k})$}
+              \put(0,59){\vector(1,0){37}}
+              \put(38,51){\framebox(60,16){$\red{a_k} \Nc(t|0,\red{v_k})$}}
+              \multiput(77,32)(0,7){3}{\circle*{4}}              
+              \put(-5,23){$\delta(t-\red{t_K})$}
+              \put(38,10){\framebox(60,16){$\red{a_K} \Nc(t|0,\red{v_K})$}}
+              \put(0,18){\vector(1,0){37}}
+
+              \put(98,103){\vector(1,-1){38}}
+              \put(98,59){\vector(1,0){39}}
+              \put(98,17){\vector(1,1){38}}
+
+              \put(150,60){\circle{24}}
+              \put(146,57){$\Large+$}
+              \put(165,75){$g_{\rthetab}(t)$}
+              \put(164,60){\vector(1,0){33}}
+              
+              \put(212,85){$\epsilon(t)$}
+              \put(210,95){\vector(0,-1){20}}
+              \put(211,60){\circle{24}}
+              \put(207,58){$\Large+$}
+              
+              \put(225,66){$g(t)$}
+              \put(225,60){\vector(1,0){20}}
+\end{picture}
+}
+
+\def\modelc{\tt\setlength{\unitlength}{0.92pt}
+\begin{picture}(250,106)
+\thinlines    \put(-5,105){$\delta(t-\red{t_1})$}
+              \put(0,100){\vector(1,0){37}}
+              \put(38,95){\framebox(40,16){$\red{a_1}$}}
+			  \multiput(57,72)(0,7){3}{\circle*{4}}
+              \put(-5,65){$\delta(t-\red{t_k})$}
+              \put(0,59){\vector(1,0){37}}
+              \put(38,51){\framebox(40,16){$\red{a_k}$}}
+              \multiput(57,32)(0,7){3}{\circle*{4}}              
+              \put(-5,23){$\delta(t-\red{t_K})$}
+              \put(38,10){\framebox(40,16){$\red{a_K}$}}
+              \put(0,18){\vector(1,0){37}}
+
+              \put(78,103){\vector(1,-1){38}}
+              \put(78,59){\vector(1,0){39}}
+              \put(78,17){\vector(1,1){38}}
+
+              \put(130,60){\circle{24}}
+              \put(126,57){$\Large+$}
+              \put(144,60){\vector(1,0){10}}
+              \put(154,52){\framebox(50,16){$\Nc(t|0,v)$}}
+              
+              \put(205,75){$g_{\rthetab}(t)$}
+              \put(204,60){\vector(1,0){33}}
+              
+              \put(252,85){$\epsilon(t)$}
+              \put(250,95){\vector(0,-1){20}}
+              \put(251,60){\circle{24}}
+              \put(247,58){$\Large+$}
+              
+              \put(265,66){$g(t)$}
+              \put(265,60){\vector(1,0){20}}
+\end{picture}
+}
+
+\def\modeld{\tt\setlength{\unitlength}{0.92pt}
+\begin{picture}(250,106)
+\thinlines    \put(20,70){$s(t)=\sum_k \rak \delta(t-\red{t_k})$}
+              \put(105,60){\vector(1,0){50}}
+              \put(154,52){\framebox(50,16){$\Nc(t|0,v)$}}
+              
+              \put(205,75){$g_{\rthetab}(t)$}
+              \put(204,60){\vector(1,0){33}}
+              
+              \put(252,85){$\epsilon(t)$}
+              \put(250,95){\vector(0,-1){20}}
+              \put(251,60){\circle{24}}
+              \put(247,58){$\Large+$}
+              
+              \put(265,66){$g(t)$}
+              \put(265,60){\vector(1,0){20}}
+              \put(0,20){\siga}
+\end{picture}
+}
+
+\def\siga{\setlength{\unitlength}{0.46pt}
+\begin{picture}(290,108)
+\thinlines    \put(10,26){\vector(1,0){260}}
+              \put(16,12){\vector(0,1){88}}
+              \put(48,27){\vector(0,1){34}}
+              \put(79,27){\vector(0,1){54}}
+              %\put(102,27){\vector(0,1){31}}
+              \put(130,27){\vector(0,1){46}}
+              \put(188,26){\vector(0,1){40}}
+              \put(262,14){$t$}
+              %\put(22,90){$s(t)$}
+              \put(182,16){$\red{t_K}$}
+              \put(195,63){$\red{a_K}$}
+              \put(125,15){$\red{t_k}$}
+              \put(137,68){$\red{a_k}$}
+              \put(75,14){$\red{t_2}$}
+              \put(84,73){$\red{a_2}$}
+              \put(43,15){$\red{t_1}$}
+              \put(54,56){$\red{a_1}$}
+              \multiput(150,46)(8,0){3}{\circle*{4}}
+\end{picture}
+}
+
+\def\modele{\tt\setlength{\unitlength}{0.92pt}
+\begin{picture}(250,106)
+\thinlines    \put(20,70){$s(t)=\sum_n \rfn \delta(t-n\Delta t)$}
+              \put(105,60){\vector(1,0){50}}
+              \put(154,52){\framebox(50,16){$\Nc(t|0,v)$}}
+              
+              \put(205,75){$g_{\rfb}(t)$}
+              \put(204,60){\vector(1,0){33}}
+              
+              \put(252,85){$\epsilon(t)$}
+              \put(250,95){\vector(0,-1){20}}
+              \put(251,60){\circle{24}}
+              \put(247,58){$\Large+$}
+              
+              \put(265,66){$g(t)$}
+              \put(265,60){\vector(1,0){20}}
+              \put(0,20){\sigb}
+\end{picture}
+}
+
+\def\sigb{\setlength{\unitlength}{0.46pt}
+\begin{picture}(290,108)
+\thinlines    \put(10,26){\vector(1,0){260}}
+              \put(10,12){\vector(0,1){88}}
+              
+              \put(20,27){\vector(0,1){34}}
+              \put(40,27){\vector(0,1){14}}
+              \put(60,27){\vector(0,1){54}}
+              \put(80,27){\vector(0,1){31}}
+              \put(100,27){\vector(0,1){46}}
+              \put(120,27){\vector(0,1){40}}
+              \put(140,27){\vector(0,1){48}}
+              \put(160,27){\vector(0,1){34}}
+              \put(180,27){\vector(0,1){14}}
+              \put(200,27){\vector(0,1){31}}
+              \put(220,27){\vector(0,1){46}}
+              \put(240,27){\vector(0,1){40}}
+              
+              \put(270,14){$t$}
+              %\put(22,90){$s(t)$}
+              \put(15,10){$1$}
+              \put(15,63){$\red{f_1}$}
+              \put(135,10){$n$}
+              \put(135,68){$\red{f_n}$}
+              \put(235,10){$N$}
+              \put(235,68){$\red{f_N}$}
+
+              %\put(60,10){$\Delta t$}
+\end{picture}
+}
+
+\def\sigbr{\setlength{\unitlength}{0.46pt}
+\begin{picture}(290,108)
+\thinlines    \put(10,26){\vector(1,0){260}}
+              \put(10,12){\vector(0,1){88}}
+              
+              \put(20,27){\vector(0,1){34}}
+              \put(40,27){\vector(0,1){14}}
+              \put(60,27){\vector(0,1){54}}
+              \put(80,27){\vector(0,1){31}}
+              \put(100,27){\vector(0,1){46}}
+              \put(120,27){\vector(0,1){40}}
+              \put(140,27){\vector(0,1){48}}
+              \put(160,27){\vector(0,1){34}}
+              \put(180,27){\vector(0,1){14}}
+              \put(200,27){\vector(0,1){31}}
+              \put(220,27){\vector(0,1){46}}
+              \put(240,27){\vector(0,1){40}}
+              \put(270,14){$t$}
+              %\put(22,90){$s(t)$}
+              \put(15,10){$1$}
+              \put(15,63){$\red{f_1}$}
+              \put(135,10){$n$}
+              \put(135,68){$\red{f_n}$}
+              \put(235,10){$N$}
+              \put(235,68){$\red{f_N}$}
+
+              \put(60,10){$\red{\Delta t}$}
+\end{picture}
+}
+
+\def\modelf{\tt\setlength{\unitlength}{0.92pt}
+\begin{picture}(250,106)
+\thinlines    \put(20,70){$s(t)=\sum_n \rfn \delta(t-n\red{\Delta t})$}
+              \put(105,60){\vector(1,0){50}}
+              \put(154,52){\framebox(50,16){$\Nc(t|0,\red{v})$}}
+              
+              \put(205,75){$g_{\rfb,\rthetab}(t)$}
+              \put(204,60){\vector(1,0){33}}
+              
+              \put(252,85){$\epsilon(t)$}
+              \put(250,95){\vector(0,-1){20}}
+              \put(251,60){\circle{24}}
+              \put(247,58){$\Large+$}
+              
+              \put(265,66){$g(t)$}
+              \put(265,60){\vector(1,0){20}}
+              \put(0,20){\sigbr}
+\end{picture}
+}
+
+\def\sig{\tt\setlength{\unitlength}{1.38pt}
+\begin{picture}(290,108)
+\thinlines    %\put(179,83){$s_K(t)$}
+              %\put(123,83){$s_k(t)$}
+              %\put(70,83){$s_2(t)$}
+              %\put(36,83){$s_1(t)$}
+              \put(10,26){\vector(1,0){260}}
+              \put(48,27){\vector(0,1){34}}
+              \put(16,12){\vector(0,1){88}}
+              \put(79,27){\vector(0,1){54}}
+              \put(102,27){\vector(0,1){31}}
+              \put(130,27){\vector(0,1){46}}
+              \put(188,26){\vector(0,1){40}}
+              \put(262,14){$t$}
+              \put(22,90){$g(t)$}
+              \put(182,16){$t_K$}
+              \put(195,63){$a_K$}
+              \put(125,15){$t_k$}
+              \put(137,68){$a_k$}
+              \put(75,14){$t_2$}
+              \put(84,73){$a_2$}
+              \put(43,15){$t_1$}
+              \put(54,56){$a_1$}
+              \multiput(150,46)(8,0){3}{\circle*{4}}
+\end{picture}
+}
+
+\def\decgb{\tt\setlength{\unitlength}{0.92pt}
+\begin{picture}(363,122)
+\thinlines    \put(248,66){\vector(1,0){14}}
+              \put(215,57){\framebox(33,18){$h(t)$}}
+              \put(288,66){\vector(1,0){22}}
+              \put(270,64){$\large\Sigma$}
+              \put(275,67){\circle{26}}
+              \put(275,102){\vector(0,-1){20}}
+              \put(280,94){$b(t)$}
+              \put(296,75){$y(t)$}
+              \multiput(100,35)(0,8){3}{\circle*{4}}
+              \put(194,72){$x(t)$}
+              \put(193,66){\vector(1,0){23}}
+              \put(176,61){$\large\Sigma$}
+              \put(181,65){\circle{26}}
+              \put(80,92){\framebox(43,18){$a_1$}}
+              \put(80,58){\framebox(43,18){$a_2$}}
+              \put(79,10){\framebox(43,18){$a_K$}}
+              \put(123,66){\vector(1,0){45}}
+              \put(123,101){\vector(4,-3){44}}
+              \put(122,18){\vector(1,1){44}}
+              \put(55,101){\vector(1,0){23}}
+              \put(55,66){\vector(1,0){23}}
+              \put(55,19){\vector(1,0){23}}
+              \put(10,104){$g_1(t-t_1)$}
+              \put(10,69){$g_2(t-t_2)$}
+              \put(10,22){$g_K(t-t_k)$}
+\end{picture}
+}
+
+\def\decgc{\tt\setlength{\unitlength}{0.92pt}
+\begin{picture}(287,68)
+\thinlines    \put(36,20){\vector(1,0){23}}
+              \put(101,20){\vector(1,0){23}}
+              \put(167,20){\vector(1,0){16}}
+              \put(124,12){\framebox(43,18){$h(t)$}}
+              \put(210,20){\vector(1,0){23}}
+              \put(192,20){$\large\Sigma$}
+              \put(196,23){\circle{26}}
+              \put(196,57){\vector(0,-1){20}}
+              \put(200,49){$b(t)$}
+              \put(218,30){$y(t)$}
+              \put(15,20){$s(t)$}
+              \put(101,32){$x(t)$}
+              \put(59,11){\framebox(43,18){$g(t)$}}
+\end{picture}
+}
+
+\def\sigd{
+\begin{picture}(290,108)
+\thinlines    \put(10,26){\vector(1,0){260}}
+              \put(48,27){\vector(0,1){34}}
+              \put(16,12){\vector(0,1){88}}
+              \put(79,27){\vector(0,1){54}}
+              \put(102,27){\vector(0,1){31}}
+              \put(130,27){\vector(0,1){46}}
+              \put(188,26){\vector(0,1){40}}
+              \put(262,14){$t$}
+              \put(22,90){$g(t)$}
+              \put(182,16){$t_K$}
+              \put(195,63){$a_K$}
+              \put(125,15){$t_k$}
+              \put(137,68){$a_k$}
+              \put(75,14){$t_2$}
+              \put(84,73){$a_2$}
+              \put(43,15){$t_1$}
+              \put(54,56){$a_1$}
+              \multiput(150,46)(8,0){3}{\circle*{4}}
+\end{picture}
+}
+
+\def\wt#1{\widetilde{#1}}
+\def\Thetab{\bm{\Theta}}
+\def\Thetabh{\widehat{\Thetab}}
+\def\abh{\widehat{\ab}}
+\def\kbt{\tilde{\kb}}
+\def\kt{\tilde{k}}
+\def\gammat{\tilde{\gamma}}
+\def\Sigmat{\tilde{\Sigma}}
+\def\etat{\tilde{\eta}}
+
+\def\rHb{\red{\Hb}}
+\def\rFb{\red{\Fb}}
+
+\def\wt#1{\widetilde{#1}}
+\def\Thetab{\bm{\Theta}}
+\def\Thetabh{\widehat{\Thetab}}
+\def\abh{\widehat{\ab}}
+\def\kbt{\tilde{\kb}}
+\def\kt{\tilde{k}}
+\def\gammat{\tilde{\gamma}}
+\def\Sigmat{\tilde{\Sigma}}
+\def\etat{\tilde{\eta}}
+\def\zetat{\tilde{\zeta}}
+\def\Mt{\tilde{M}}
+\def\Mh{\hat{M}}
+\def\Nt{\tilde{N}}
+\def\atk{{\tilde{a}_k}}
+\def\ztk{{\tilde{z}_k}}
+
+\def\rh{\red{h}}
+\def\rvbe{\rvb_{\epsilon}}
+\def\rvei{\rv_{\epsilon_i}}
+\def\rVbe{\red{\Vb}_{\epsilon}}
+\def\rVbeh{\red{\Vbh}_{\epsilon}}
+\def\vbh{\hat{\vb}}
+\def\rVbfh{\red{\Vbh}_f}
+\def\rvbeh{\red{\vbh}_{\epsilon}}
+\def\rvbfh{\red{\vbh}_f}
+
+\def\rvbf{\rvb_f}
+\def\rvfj{\rv_{f_j}}
+\def\rVbf{\red{\Vb}_f}
+
+\def\alphaez{\alpha_{\epsilon_0}}
+\def\betaez{\beta_{\epsilon_0}}
+\def\alphafz{\alpha_{f_0}}
+\def\betafz{\beta_{f_0}}
+
+\def\wh#1{\widehat{#1}}
+\def\disp#1{{\displaystyle #1}}
+
+\def\ER{\mbox{I\kern-.25em R}}
+\def\EC{\mbox{C\kern-.8em C}}
+\def\EZ{\mbox{Z\kern-.55em Z}}
+\def\EN{\mbox{N\kern-.8em N}}
+
+\def\bm#1{\mbox{\boldmath $#1$}}
+\def\sb{{\bm s}}
+\def\ub{{\bm u}}
+\def\xb{{\bm x}}
+\def\yb{{\bm y}}
+\def\db{{\bm{d}}}
+\def\Ab{{\bm A}}
+\def\Bb{{\bm B}}
+\def\Fb{{\bm F}}
+\def\Rb{{\bm R}}
+\def\Sb{{\bm S}}
+\def\Ub{{\bm U}}
+
+\def\thetab{\bm{\theta}}
+\def\phib{\bm{\phi}}
+\def\lambdab{\bm{\lambda}}
+\def\Lambdab{\bm{\Lambda}}
+\def\Sigmab{\bm{\Sigma}}
+\def\lra{\longrightarrow}
+\def\intg{\int\kern-1.1em\int}
+\def\intd{\int\kern-.8em\int}
+
+\def\apriori{{\em a priori} }
+\def\aposteriori{{\em a posteriori} }
+
+\def\argmins#1#2{\mbox{arg}\min_{#1}\left\{{#2}\right\}}
+\def\argmaxs#1#2{\mbox{arg}\max_{#1}\left\{{#2}\right\}}
+\def\argmin#1#2{\mathop{\mbox{arg}\min}_{#1}\left\{{#2}\right\}}
+\def\argmax#1#2{\mathop{\mbox{arg}\max}_{#1}\left\{{#2}\right\}}
+\def\d#1{\,\mbox{d}#1}
+\def\esp#1{\mbox{E}\left\{ #1 \right\}}
+\def\espx#1#2{\mbox{E}_{#1}\left\{ #2 \right\}}
+\def\expf#1{\exp\left[ {#1} \right]}
+\def\dpdx#1#2{\frac{\partial #1}{\partial #2}}
+\def\dpdxd#1#2{\frac{\partial^2 #1}{\partial #2^2}}
+
+\def\ent#1{\hbox{H}\left[#1\right]}
+\def\dent#1{\delta\hbox{H}\left[#1\right]}
+\def\rent#1{\hbox{D}\left[#1\right]}
+\def\kullback#1{\hbox{K}\left[#1\right]}
+\def\pent#1{\hbox{PE}\left[#1\right]}
+\def\mdiv#1{\hbox{J}\left[#1\right]}
+\def\infmut#1{\hbox{I}\left[#1\right]}
+\def\idisc#1{\hbox{ID}\left[#1\right]}
+\def\j{\mbox{j}}
+
+\def\pxtheta{p(x | \thetab)}
+\def\pxthetas{p(x | \thetab^*)}
+\def\pxthetasd{p(x | \thetab^*+\Delta\thetab)}
+
+\def\tr#1{\hbox{tr}\left(#1\right)}
+\def\det#1{\hbox{det}\left(#1\right)}
+%\def\det#1{\left| #1\right| }
+
+
+\def\ieeeSSC{IEEE Transactions on Systems Science and Cybernetics}
+\def\ieeeSP{IEEE Transactions on Signal Processing}			% 1.234
+\def\ieeeP{Proceedings of the IEEE}					% ?
+\def\ieeeIT{IEEE Transactions on Information Theory}			% 1.971
+\def\TS{Traitement du Signal}						% ?
+\def\siamCO{SIAM Journal of Control}					% 0.968
+\def\AISM{Annals of Institute of Statistical Mathematics}		% 0.175
+\def\ieeeASSP{IEEE Transactions on Acoustics Speech and Signal Processing}% ?
+\def\ieeeAC{IEEE Transactions on Automatic and Control}			% 0.867
+
+\def\jan{janvier\xspace}
+\def\feb{f\'evrier\xspace}
+\def\mar{mars\xspace}
+\def\apr{avril\xspace}
+\def\may{mai\xspace}
+\def\jun{juin\xspace}
+\def\jul{juillet\xspace}
+\def\aug{ao\^ut\xspace}
+\def\sep{septembre\xspace}
+\def\oct{octobre\xspace}
+\def\nov{novembre\xspace}
+\def\dec{d\'ecembre\xspace}
+%
+\def\Jan{January\xspace}	
+\def\Feb{February\xspace}
+\def\Mar{March\xspace}
+\def\Apr{April\xspace}
+\def\May{May\xspace}
+\def\Jun{June\xspace}
+\def\Jul{July\xspace}
+\def\Aug{August\xspace}
+\def\Sep{September\xspace}
+\def\Oct{October\xspace}
+\def\Nov{November\xspace}
+\def\Dec{December\xspace}
+
+
+\def\espq#1{\left<#1\right>_q}
+
+\def\rZbe{\rZb_{\epsilon}}
+\def\nubt{\widetilde{\nub}}
+
+\def\rVbe{\red{\Vb_{\epsilon}}}
+\def\rvbe{\red{\vb_{\epsilon}}}
+\def\rVbf{\red{\Vb_{f}}}
+\def\rvbf{\red{\vb_{f}}}
+\def\rvei{\red{v_{\epsilon_i}}}
+\def\rvfj{\red{v_{f_j}}}
+\def\rvbhe{\red{\vbh_{\epsilon}}}
+\def\rvbhf{\red{\vbh_{f}}}
+\def\bsplit{\begin{split}}
+\def\esplit{\end{split}}
+\def\alphaei{\alpha_{\epsilon_i}}
+\def\alphafj{\alpha_{f_j}}
+\def\betaei{\beta_{\epsilon_i}}
+\def\betafj{\beta_{f_j}}
