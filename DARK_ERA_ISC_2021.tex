@@ -9,7 +9,7 @@
   \usepackage{amsmath,amsthm, amssymb, latexsym}
   %\boldmath
   \usepackage[english]{babel}
-  \usepackage[latin1]{inputenc}
+  \usepackage[utf8x]{inputenc}
 % use the poster package (beamerposter)
   \usepackage[orientation=portrait,size=a0,scale=1.4,debug]{beamerposter} 
   \usepackage{fancybox,pgf}
@@ -19,6 +19,9 @@
 \usepackage{tocloft}
 \usepackage{algorithm}
 \usepackage{algorithmic}
+
+\usepackage{comment}
+
   \setbeamertemplate{navigation symbols}{}
   \setbeamertemplate{bibliography item}[text]
   \setbeamercolor*{bibliography entry author}{fg=black}
@@ -67,7 +70,7 @@
 \input{alphabet2}
 \input{macros_gpi}
 
-\graphicspath{{figuresFully3D2019/}}
+%\graphicspath{{figuresFully3D2019/}}
   \title{DARK-ERA : Dataflow Algorithm aRchitecture co-design of SKA pipeline for Exascale Radio Astronomy}
   \author{ Daniel Charlet$^{**5}$ (IJCLab), Karol Desnos$^{1}$, Mickael Dardaillon$^{3}$, Andr\'e Ferrari$^{4}$, Chiara Ferrari$^{4}$, Nicolas Gac$^{3}$, Jean-Fran\c cois Nezan$^{1}$, Fran\c cois Orieux$^{3}$, Simon Prunet$^{4}$, Martin Quinson$^{2}$, Fr\'ed\'eric Suter$^{**2}$(IN2P3 Computing Center), Cyril Tasse$^{**5}$ (GEPI), C\'edric Viou$^{5}$}
   \institute{$^{1}$IETR (INSA),  $^{2}$IRISA (ENS), $^{3}$L2S (CS), $^{4}$Lagrange (UCA),  $^{5}$Nan\c cay (Obs Paris) - \textit{contact: nicolas.gac@universite-paris-saclay.fr}      }
@@ -77,23 +80,9 @@
   \frame[plain]
   {
   
-  \begin{tabular*}{\textwidth}{ p{30cm}p{30cm}p{32cm}  }
-		%\includegraphics[scale=1.7]{logos_L2S} &
-		%\includegraphics[scale=0.5]{logosafran}  & 
-		%\includegraphics[scale=1.1]{centralesupelec} 
-		%\hspace{0.01\textwidth} &
-		%\includegraphics[scale=1.1]{CNRSlogo} 
-		%\hspace{0.01\textwidth} &
-		%\includegraphics[scale=1.5]{logo_UPS} 
-		%\hspace{0.01\textwidth} &
-	%\multicolumn{1}{r}{\includegraphics[scale=2.0]{UPSAlogo}}
-		\end{tabular*}
-	
-		 
+		
   \begin{minipage}{\textwidth}
 	{
-	
-	\\[1ex]
 	\begin{center}
 	\Large{\textbf{\inserttitle}}\\[1ex]
 	\large{\insertauthor}\\[1ex]
@@ -149,7 +138,7 @@ The exascale radio telescope Square Kilometer Array (SKA) will require supercomp
 Thanks to SimSDP, algorithm and architecture spaces will be explored in the SKA context. The new generation of radio astronomy imaging pipelines like ddfacet will be described at a high-level of abstraction suitable for targeting any heterogeneous multinode HPC system SKA may choose in the future. Then, several SDP architecture configurations (number of nodes, kind of accelerators) and several SDP algorithm configurations will be explored together through the large scale simulations offered by SimSDP. Besides, SDP prototypes on MPPA and FPGA designed through High Level Synthesis (HLS) tools and set up at the NenuFAR radio telescope will be developed and profiled on small scale datasets. It will allow to evaluating the potential of low power accelerators as an alternative to the mainstream GPU architecture. These SDP profiling feedbacks on GPU MPPA FPGA will fill out SimSDP with annotations on the dataflow graph. SDP prototypes will also be compared with SimSDP simulations on medium scale datasets to evaluate SimSDP new features.\\
 
 
- \\
+ 
  \begin{center}
     \includegraphics[width=\textwidth ]{Tasks} % %et/ou [height=]
     \end{center}
@@ -174,27 +163,26 @@ Thanks to SimSDP, algorithm and architecture spaces will be explored in the SKA 
 
 %\bibliographystyle{spiejour}   % makes bibtex use spiejour.bst
 
-\small{
-         \begin{minipage}{.99\textwidth}
-         \bibliographystyle{IEEEtran}
-         \renewcommand{\bibsection}{}
+%\small{
+ %        \begin{minipage}{.99\textwidth}
+  %       \bibliographystyle{IEEEtran}
+   %      \renewcommand{\bibsection}{}
        %  \bibliography{ChapdelaineBibliographie}   % bibliography data in report.bib
         % \begin{thebibliography}{50}
 	%\bibitem{Ayasso10} \textbf{{H}acheme {A}yasso}, ''{U}ne approche bay{\'e}sienne de l'inversion. {A}pplication {\`a} l'imagerie de diffraction dans les domaines micro-onde et optique'', {P}hD thesis, {U}niversité {P}aris-Sud {XI}, 2010
 	%\bibitem{huang1987statistical} \textbf{{K}erson {H}uang}, ''{S}tatistical mechanics'', \textit{{W}iley}, 1987.	
 	%\end{thebibliography}
-  	\end{minipage}
-  	}
+  %	\end{minipage}
+  %	}
 
 \end{column}
 \end{columns}
 
+\begin{tabular*}{\textwidth}{lr}
+  \includegraphics[scale=0.8]{partenaires_DARK-ERA} &
+\includegraphics[scale=1.0]{logo_DARK-ERA_avec_ANR} \\
+  \end{tabular*}
+
 }
 
-
 \end{document}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Local Variables: 
-%%% mode: latex
-%%% TeX-PDF-mode: t
