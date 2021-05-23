@@ -21,11 +21,11 @@
 \usepackage{algorithmic}
 
 \usepackage{comment}
-\usepackage[colorlinks = true,
-            linkcolor = blue,
-            urlcolor  = blue,
-            citecolor = blue,
-            anchorcolor = blue]{hyperref}
+%\usepackage[colorlinks = true,
+ %           linkcolor = blue,
+  %          urlcolor  = blue,
+   %         citecolor = blue,
+    %        anchorcolor = blue]{hyperref}
   \setbeamertemplate{navigation symbols}{}
   \setbeamertemplate{bibliography item}[text]
   \setbeamercolor*{bibliography entry author}{fg=black}
@@ -72,7 +72,7 @@
 \newcommand{\scaleimage}{0.5}   
 \input{alphabet1}
 \input{alphabet2}
-\input{macros_gpi}
+\graphicspath{{fig/}}
 
 %\graphicspath{{figuresFully3D2019/}}
   \title{\underline{D}ataflow \underline{A}lgorithm a\underline{R}chitecture co-design of S\underline{K}A pipeline for \underline{E}xascale \underline{R}adio \underline{A}stronomy}
@@ -80,16 +80,15 @@
   \institute{\textit{$^{1}$IETR (INSA),  $^{2}$IRISA (ENS), $^{3}$L2S (CS), $^{4}$Lagrange (UCA),  $^{5}$Nan\c cay (Obs Paris)  \\ contact: nicolas.gac@l2s.centralesupelec.fr}      }
   \date{\normalsize ISC Project Poster Session, June 30 2021}
 
-  \begin{document}
+\begin{document}
+
   \frame[plain]
   {
-  
-
 \begin{table}[t]
    \centering
 \begin{tabularx}{0.99\textwidth}{cc}
   \includegraphics[scale=0.9]{partenaires_DARK-ERA.eps} & \hspace{5cm}
-   \scalebox{0.75}{ \input{logo_ANR_avec_numero_projet.pdf_t}}\\   
+   \scalebox{0.75}{ \input{fig/logo_ANR_avec_numero_projet.pdf_t}}\\   
 %&\includegraphics[scale=0.6]{logo_ANR_avec_numero_projet.pdf} \\
   \end{tabularx}
   \end{table}
@@ -114,31 +113,16 @@
 	\end{center}
 	}
    \end{minipage}
-   
-   
 \end{column}
-
 \end{columns}
 
 \vspace{1cm}
-
- %  \rule{\textwidth}{3mm}
-   
-%   \begin{block}{ }
-%\begin{minipage}{0.99\textwidth}
-%  { \vspace{-2cm}
-%\textbf{Summary:} The exascale radio telescope SKA will require supercomputers with high technical constraints. The Science Data Processor (SDP) pipeline in charge of producing the multidimensional images of the sky will have to execute in realtime a complex algorithm chain from data coming from telescopes at an incredible rate of several Tb/s and without any storage capabilities. The SDP will also have to be as green as possible with an energy budget of only 1 MWatt for 250 Petaflops. Such energy and computation requirements imply the SDP to be an innovative dataflow oriented and heterogeneous architecture. This supercomputer will be based on a standard HPC system combined with FPGA or application-specific architectures like GPU or the manycore Kalray MPPA. One crucial challenge is to assess the performance both in time and energy of new complex scientific dataflow algorithms on not-yet-existing complex computing infrastructure. In that goal, SimSDP is a rapid prototyping tool for SKA-like dataflow applications developed by the Dark-Era project. Through an original mixed approach based on execution and simulation, SimSDP purpose is to provide early analyses in terms of memory usage, latency, throughput, and energy consumption. Following an Algorithm Architecture Matching (AAM) approach, SimSDP will rely on a dataflow model of the algorithm and a model of the target architecture. SimSDP will be based on two existing tools: PREESM and SimGrid. PREESM accurately evaluates heterogeneous single node performance; SimGrid accurately simulates inter-node communications. Then, their association will allow for reliable simulations of large scale heterogeneous HPC systems.
-%}  
-%\end{minipage}
-%\end{block}
-
 \begin{columns}[t]
 \begin{column}{.49\linewidth}
 \begin{block}{\large \textbf{SKA computing, an HPC challenge}}
 	%\vspace{1cm}
         \begin{minipage}{0.95\textwidth}
 The \textbf{exascale radio telescope} Square Kilometre Array (SKA) \cite{skatelescope} will require supercomputers with high technical demands. The Science Data Processor (SDP) pipeline in charge of producing the multidimensional images of the sky will have to execute in \textbf{realtime} a \textbf{complex algorithm chain} with data coming from telescopes at an incredible \textbf{rate of several Tb/s} and \textbf{limited storage possibilities}. The SDP will also have to be \textbf{as green as possible} with an energy budget of only 1 MWatt for 250 Petaflops. 
-
 
 \begin{center}
     \includegraphics[width=0.9\textwidth ]{pipeline} % %et/ou [height=]
@@ -148,12 +132,11 @@ The \textbf{SDP supercomputer} will be based on a standard HPC system combined w
 \end{minipage}
 \end{block}
 
-
 \begin{block}{\large \textbf{Dark-Era, a 4-year project starting in 2021}}
  \begin{minipage}{0.95\textwidth}
 The \textbf{consortium} gathers complementary skills in computer science, signal processing, and astronomy with twelve permanent members from the \textbf{SimGrid} \cite{casanova:hal-01017319} development Team at IRISA, the \textbf{PREESM} \cite{preesm} development team at IETR, the \textbf{inverse problem} team at L2S, and two \textbf{radio astronomy} teams at Observatories of Paris and Côte d’Azur. Dark-Era has the support of SKA-France and works in collaboration with Atos-Bull.\\
 
-The \textbf{PhD and PostDoc positions} within Dark-Era will be published on \href{https://dark-era.gitlabpages.inria.fr}{https://dark-era.gitlabpages.inria.fr} :
+The \textbf{PhD and PostDoc positions} within Dark-Era will be published on \href{https://dark-era.pages.centralesupelec.fr}{\textcolor{blue}{https://dark-era.pages.centralesupelec.fr}} :
 \begin{itemize}
     \item One post-doc at LS2 on HLS FPGA prototype (autumn 2021)
     \item Two PhDs at IETR and IRISA respectively on PREESM and SimGrid
@@ -166,9 +149,9 @@ The \textbf{PhD and PostDoc positions} within Dark-Era will be published on \hre
 \begin{block}{\large \textbf{Dark-Era goals}}
  \begin{minipage}{0.95\textwidth}
  \begin{itemize}
- \item[#1] Building \textbf{SimSDP}, a rapid prototyping tool providing exascale simulations from dataflow algorithm descriptions.
- \item[#2] Exploring \textbf{low power accelerators} like FPGA or Kalray MPPA as alternatives to mainstream GPU architecture.
- \item[#3] Being source of proposals for SKA computing and promoting French contributions such as \textbf{ddfacet} \cite{Tasse18}.
+ \item[1] Building \textbf{SimSDP}, a rapid prototyping tool providing exascale simulations from dataflow algorithm descriptions.
+ \item[2] Exploring \textbf{low power accelerators} like FPGA or Kalray MPPA as alternatives to mainstream GPU architecture.
+ \item[3] Being source of proposals for SKA computing and promoting French contributions such as \textbf{ddfacet} \cite{Tasse18}.
  \end{itemize}
  \end{minipage}
 \end{block}
@@ -186,6 +169,7 @@ The \textbf{PhD and PostDoc positions} within Dark-Era will be published on \hre
 \end{column}
 % Second column
 \begin{column}{.49\linewidth}
+
 \begin{block}{\large \textbf{SimSDP, an exascale simulation tool}}
  \begin{minipage}{0.95\textwidth}
  \textbf{SimSDP} purpose is to provide \textbf{early analyses} in terms of memory usage, latency, throughput, and energy consumption through an original mixed approach based on execution and simulation. Following an Algorithm Architecture Matching (AAM) approach, SimSDP will rely on a dataflow model of the algorithm and a model of the target architecture. SimSDP will be based on two existing tools: PREESM and SimGrid. PREESM accurately evaluates \textbf{heterogeneous single node} performance; SimGrid accurately simulates \textbf{inter-node communications}. Their association will allow for reliable simulations of \textbf{large scale heterogeneous HPC systems}.
@@ -195,7 +179,6 @@ The \textbf{PhD and PostDoc positions} within Dark-Era will be published on \hre
     \end{center}
  \end{minipage}
 \end{block}
-
 
 \begin{block}{\large \textbf{Dark-Era tasks}}
 	%\vspace{1cm}
@@ -212,19 +195,12 @@ In \textbf{T3}, SDP prototypes on MPPA and FPGA designed through High Level Synt
 \\
 In \textbf{T4}, algorithm and architecture spaces will be explored in the SKA context through the large scale simulations offered by SimSDP. The radio astronomy imaging pipelines will be described at a high-level of abstraction suitable for targeting any heterogeneous multinode HPC system SKA may choose in the future. Several SDP architecture configurations (number of nodes, type of accelerators) and several SDP algorithm configurations will be then explored. 
 \end{minipage}
-
 \end{block}
-
-
-
-
 %\bibliographystyle{spiejour}   % makes bibtex use spiejour.bst
-
 %\begin{block}{\large \textbf{Reference}}
-
 %\end{block}
 \end{column}
-
 \end{columns}
 }
+
 \end{document}

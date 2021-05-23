@@ -42,8 +42,8 @@
 \setbeamercolor{subsection in head/foot}{fg=black,bg=white}
 \definecolor{darkspringgreen}{rgb}{0.09, 0.45, 0.27}
 
-\setbeamercolor{block body alerted}{bg=red!0.2,fg=black}
-\setbeamercolor{block title alerted}{bg=red,fg=white}
+\setbeamercolor{block body alerted}{bg=white,fg=gray}
+\setbeamercolor{block title alerted}{bg=gray,fg=white}
 
 \setbeamercolor{block body}{bg=black!0.2,fg=black}
 \setbeamercolor{block title}{bg=black,fg=white}
@@ -154,8 +154,7 @@
          %\begin{minipage}{\linewidth}
             \begin{center}
             \large{\textbf{Dark-Era Project}}
-            \vspace{0.5cm}
-
+\vspace{0.5cm}
             \scriptsize{Project Poster Session \\ June 30 2021}
         \end{center}
          %\end{minipage}
@@ -166,57 +165,132 @@
     \end{column}
     \end{columns}
 
-    \vspace{0.5cm}
+    \vspace{0.1cm}
+
+    \begin{columns}[t]
+        \begin{column}{.85\linewidth}
    \begin{center}
-   \scriptsize{
+   \tiny{
 \begin{minipage}{\linewidth}
    Daniel Charlet$^{**5}$ (IJCLab), Karol Desnos$^{1}$, Mickael Dardaillon$^{3}$, André Ferrari$^{4}$, Chiara Ferrari$^{4}$, \underline{Nicolas Gac$^{3}$}, Jean-François Nezan$^{1}$, François Orieux$^{3}$, Simon Prunet$^{4}$, Martin Quinson$^{2}$, Frédéric Suter$^{**2}$(IN2P3 Computing Center), Cyril Tasse$^{**5}$ (GEPI), Cédric Viou$^{5}$\\
    \\
-   $^{1}$IETR (INSA),  $^{2}$IRISA (ENS), $^{3}$L2S (CS), $^{4}$Lagrange (UCA),  $^{5}$Nançay (Obs Paris)
+   $^{1}$IETR (INSA),  $^{2}$IRISA (ENS), $^{3}$L2S (CS), $^{4}$Lagrange (UCA),  $^{5}$Nançay (Obs Paris) 
 \end{minipage}
    }
 \end{center}
-
+\end{column}
+\begin{column}{.15\linewidth}
+    \begin{center}
+        %\scalebox{0.2}{ \input{logo_ANR_avec_numero_projet.pdf_t}}
+        \includegraphics[width=0.75\textwidth]{anr-light.pdf}    \\ 
+        \tiny{ \scalebox{0.75}{ANR-20-CE46-0001-01}}
+    \end{center}
+    \end{column}
+\end{columns}
 }
 }
 \frame[noframenumbering]{\tableofcontents}
 
-\section{A}
-\subsection{to come}
-
+\section{SKA context}
+\subsection{SKA computing, an HPC challenge}
 
 \frame{
+\scriptsize{
+\begin{columns}[t]
+    \begin{column}{.4\linewidth}
+\begin{center}
+\includegraphics[width=\textwidth]{SKA-at-Night-768x384.jpg} 
+\end{center}
+\end{column}
+\begin{column}{.6\linewidth}
+    \begin{block}{SKA}
+        aa
+    \end{block}
+\end{column}
+\end{columns}
 
+\begin{columns}[t]
+    \begin{column}{.4\linewidth}
+\begin{center}
+\includegraphics[width=0.7\textwidth]{image002}
+\end{center}
+\end{column}
+\begin{column}{.6\linewidth}
+    \begin{block}{SDP}
+        aa
+    \end{block}
+\end{column}
+\end{columns}
+}
 }
 
 
 \section{Team}
-%\subsection{An interdisciplinary project}
+\subsection{Interdisciplinarity}
 
 
 \frame{
     \centering
-    \frametitle{An interdisciplinary Team}
+    %\frametitle{An interdisciplinary Team}
     \includegraphics[width=\textwidth]{team_DARK-ERA.pdf}  
     
 }
 
-
+\subsection{Open Positions}
 \frame{
     \centering
-    \frametitle{Postodc and PhD open positions}
-    
+    %\frametitle{Open positions}
+    \scriptsize{
+    \begin{block}{Post-doc at LS2}
+        \begin{itemize}
+            \item \underline{Title}: \textit{Radioastronomy imager accelerated on FPGA through High Level Synthesis}
+            \item \underline{Application}: as soon as possible
+            \item \href{https://l2s.centralesupelec.fr/job/dark-era-postdoc/}{\textcolor{blue}{https://l2s.centralesupelec.fr/job/dark-era-postdoc/}}
+           % \item \textcolor{gray}{Post-doc at Lagrange on algorithm/architecture exploration for radioastronomy (spring 2024)}
+        \end{itemize}
+    \end{block}
+
+    \begin{block}{Internship/PhD at IETR}
+        \begin{itemize}
+            \item \underline{Title}: \textit{Design and Programming of Low-Power High Performance Computing Systems in Astronomy} 
+            \item \underline{Application}: as soon as possible
+            \item \href{https://codimd.math.cnrs.fr/OXqnp\_JiRPGc56ghEWHP2w}{\textcolor{blue}{https://codimd.math.cnrs.fr/OXqnp\_JiRPGc56ghEWHP2w}}
+        \end{itemize}
+    \end{block}
+
+    \begin{block}{Internship/PhD at IRISA}
+        \begin{itemize}
+            \item \underline{Title}: \textit{Workflow vs. Dataflow: Concepts, challenges and simulation for high performance computing} 
+            \item \underline{Application}: as soon as possible
+            \item \href{https://cclab.pages.in2p3.fr/web/downloads/dark-era\_xflow.pdf}{\textcolor{blue}{https://cclab.pages.in2p3.fr/web/downloads/dark-era\_xflow.pdf}}
+        \end{itemize}
+    \end{block}
+
+    \begin{alertblock}{Posdoc at Lagrange (2023)}
+        \begin{itemize}
+            \item \underline{Title}: \textit{Algorithm and Architecture exploration for radioastronomy imager} 
+        \end{itemize}
+    \end{alertblock}
+
+    }
     
 }
 
-\section{C}
-\subsection{to come}
 
+\setbeamercolor{background canvas}{bg=black}
+\section*{End}
+\frame[t,noframenumbering]
+{
+  
+%\frametitle{Projet ANR DARK-ERA (2/2)}
+\vspace{3.6cm}
+\centering
+{\huge\textcolor{white}{Thank you for your attention !}\\
 
-\frame{
-
+Dark-era website : \href{https://dark-era.gitlabpages.inria.fr}{\textcolor{white}{https://dark-era.gitlabpages.inria.fr}}
 }
 
+}
 
 \end{document}
 
